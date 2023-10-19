@@ -1,6 +1,6 @@
 class Solution:
     def romanToInt(self, s: str) -> int:
-        m = {
+        roman = {
             'I': 1,
             'V': 5,
             'X': 10,
@@ -13,10 +13,10 @@ class Solution:
         ans = 0
         
         for i in range(len(s)):
-            if i < len(s) - 1 and m[s[i]] < m[s[i+1]]:
-                ans -= m[s[i]]
+            if i < len(s) - 1 and roman[s[i]] < roman[s[i+1]]:
+                ans -= roman[s[i]]
             else:
-                ans += m[s[i]]
+                ans += roman[s[i]]
         
         return ans
         
